@@ -8,7 +8,7 @@ import 'amfe-flexible'
 import '@/styles/index.less'
 
 // 按需引入vant
-import { Button, NavBar, Form, Field, Toast, CountDown, Tabbar, TabbarItem, Icon, Image as VanImage, Grid, GridItem, Cell, CellGroup, Dialog, Tab, Tabs } from 'vant'
+import { Button, NavBar, Form, Field, Toast, PullRefresh, CountDown, Tabbar, TabbarItem, Icon, Image as VanImage, Grid, GridItem, Cell, CellGroup, Dialog, Tab, Tabs, List } from 'vant'
 Vue.use(Button)
 Vue.use(NavBar)
 Vue.use(Form)
@@ -26,6 +26,8 @@ Vue.use(CellGroup)
 Vue.use(Dialog)
 Vue.use(Tab)
 Vue.use(Tabs)
+Vue.use(List)
+Vue.use(PullRefresh)
 
 Vue.config.productionTip = false
 

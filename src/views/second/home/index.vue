@@ -10,7 +10,12 @@
     </van-nav-bar>
     <!-- Tab组件 -->
     <van-tabs class="channel-tabs" v-model="active" :animated="true" :swipeable="true">
-      <van-tab :title="channel.name" v-for="channel in channels" :key="channel.id">{{channel.name}}</van-tab>
+      <van-tab :title="channel.name" v-for="channel in channels" :key="channel.id">
+            <ArticalList :channel="chanel"></ArticalList>
+      </van-tab>
+      <!-- <van-tab title="11">
+        <ArticalList :channel="fchanel[0]"></ArticalList>
+      </van-tab> -->
       <div class="placeholder" slot="nav-right"></div>
       <div class="hamburger-btn" slot="nav-right">
         <van-icon class="iconmore" name="ellipsis" />
@@ -21,13 +26,18 @@
 
 <script>
 import { getUserChannels } from '@/api/user.js'
+import ArticalList from './components/ArticalList.vue'
 export default {
   name: 'HomeIndex',
   data () {
     return {
       active: 2,
-      channels: []
+      channels: [],
+      fchanel: [{ id: 1 }, { id: 2 }]
     }
+  },
+  components: {
+    ArticalList
   },
   created () {
     this.loadChannels()
